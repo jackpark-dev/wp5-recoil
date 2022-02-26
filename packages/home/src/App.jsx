@@ -7,6 +7,7 @@ const Header = React.lazy(() => import("nav/Header"));
 import "./index.less";
 
 import ProductCarousel from "./ProductCarousel";
+import TheBill from "./TheBill";
 
 function App() {
   return (
@@ -16,8 +17,16 @@ function App() {
           <Header />
         </React.Suspense>
         <Layout.Content style={{ padding: "2em" }}>
-          <Divider orientation="left">Products You Might Like</Divider>
-          <ProductCarousel />
+          <Row gutter={6}>
+            <Col span={18}>
+              <Divider orientation="left">Products You Might Like</Divider>
+              <ProductCarousel />
+            </Col>
+            <Col span={6}>
+              <h1>The Bill</h1>
+              <TheBill />
+            </Col>
+          </Row>
         </Layout.Content>
       </Layout>
     </RecoilRoot>

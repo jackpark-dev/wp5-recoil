@@ -26,7 +26,7 @@ const TheBill = () => {
           <td></td>
           <td></td>
           <td></td>
-          <td>%{bill.total}</td>
+          <td>${bill.total}</td>
         </tr>
       </tbody>
     </table>

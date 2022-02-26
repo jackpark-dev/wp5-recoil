@@ -1,15 +1,15 @@
 import React from "react";
 import { Carousel } from "antd";
 import { CaretLeftFilled, CaretRightFilled } from "@ant-design/icons";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
-import fruit from "./fruit";
 import ProductCard from "./ProductCard";
-import { selectedItems } from "./atoms";
+import { selectedItems, fruit } from "./atoms";
 
 export default () => {
   const carousel = React.useRef(null);
   const [selected, selectedSet] = useRecoilState(selectedItems);
+  const fruitList = useRecoilValue(fruit);
   return (
     <div
       style={{
@@ -26,7 +26,7 @@ export default () => {
         }}
       />
       <Carousel slidesToShow={4} ref={carousel}>
-        {fruit.map((product) => (
+        {fruitList.map((product) => (
           <div key={product.name}>
             <ProductCard
               {...product}

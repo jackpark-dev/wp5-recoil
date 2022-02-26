@@ -41,11 +41,13 @@ module.exports = {
       name: "nav",
       library: { type: "var", name: "nav" },
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        home: "home",
+      },
       exposes: {
         Header: "./src/Header",
       },
-      shared: ["react", "react-dom", "antd"],
+      shared: ["react", "react-dom", "antd", "recoil"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",

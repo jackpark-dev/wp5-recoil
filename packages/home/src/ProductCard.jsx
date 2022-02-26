@@ -3,10 +3,11 @@ import { Card } from "antd";
 
 const { Meta } = Card;
 
-export default ({ name, image, price, selected }) => {
+export default ({ name, image, price, selected, onClick }) => {
   return (
     <Card
       hoverable
+      onClick={onClick}
       cover={
         <img
           alt={name}
